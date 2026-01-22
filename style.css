@@ -35,6 +35,11 @@ body {
 .logo:hover{
     transform: scale(1.1);
     letter-spacing: 2px;
+     background: linear-gradient(135deg, #a0b15e, #fff, #b9c294);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 12px rgba(160, 177, 94, 0.7);
 }
 .logo h3{
     font-family: "Bebas Neue", sans-serif;
@@ -47,12 +52,12 @@ body {
 .menu a{
     text-decoration: none;
     color:white;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     transition: 0.3s;
 }
 .menu a:hover{
     color: #d3e97a;
-    transform: translateY(-3px);
+    transform: scale(1.2);
 }
 .body{
     width: 100%;
@@ -81,63 +86,68 @@ body {
     transition: transform 0.3s ease, background 0.5s ease, text-shadow 0.3s ease;
 }
 .intro:hover h1 {
-    /* Combine scale + rotation */
     transform: rotate(-2deg) scale(1.05);
-
-    /* Gradient and text glow */
     background: linear-gradient(135deg, #a0b15e, #fff, #b9c294);
     background-size: 200% 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 0 0 12px rgba(160, 177, 94, 0.7);
 }
-/* .intro p {
-    width: 100%;
-    max-width: 600px;
-    line-height: 25px;
-    font-family: "Bebas Neue", sans-serif;
-    transition: all 0.35s ease;
-}
-.intro p:hover {
-    opacity: 0.85;
-    transform: translateY(-5px);
-    text-shadow: 0 0 12px rgba(160, 177, 94, 0.25);
-} */
-
 .intro p.important {
-    font-weight: 700;              /* bolder than normal */
-    font-size: 1.3rem;             /* slightly bigger */
-    color: #c5d682;                /* accent green to pop on dark */
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: #c5d682;
     position: relative;
+    padding-left: 15px;
     transition: all 0.4s ease;
+    animation: attentionFlow 3s infinite ease-in-out;
 }
 
 .intro p.important::before {
     content: "";
     position: absolute;
-    left: -10px;
+    left: 0;
     top: 50%;
     transform: translateY(-50%);
     width: 6px;
-    height: 100%;
+    height: 80%;
     background: linear-gradient(180deg, #a0b15e, #c5d682);
     border-radius: 3px;
+    transition: all 0.3s ease;
+    animation: barGrow 3s infinite ease-in-out;
+}
+@keyframes attentionFlow {
+    0%, 100% {
+        color: #c5d682;
+        text-shadow: 0 0 5px rgba(197, 214, 130, 0.2);
+    }
+    50% {
+        color: #fff;
+        text-shadow: 0 0 15px rgba(197, 214, 130, 0.8), 0 0 25px rgba(160, 177, 94, 0.4);
+        transform: translateX(5px);
+    }
+}
+
+@keyframes barGrow {
+    0%, 100% {
+        height: 60%;
+        box-shadow: none;
+    }
+    50% {
+        height: 110%;
+        box-shadow: 0 0 15px #c5d682;
+    }
 }
 
 .intro p.important:hover {
     transform: scale(1.05);
     color: #fff;
-    text-shadow: 0 0 12px rgba(160, 177, 94, 0.5),
-                 0 0 20px rgba(197, 214, 130, 0.3);
+    animation-play-state: paused;
 }
 
-.intro.important {
-    animation: pulseText 2s infinite;
-}
-
-@keyframes pulseText {
-    0%, 100% { transform: scale(1); text-shadow: 0 0 12px rgba(160,177,94,0.3); }
-    50% { transform: scale(1.05); text-shadow: 0 0 20px rgba(160,177,94,0.6); }
+.intro p.important:hover::before {
+    height: 120%;
+    background: #fff;
 }
 
 .btns {
@@ -147,6 +157,43 @@ body {
     gap: 15px;
     margin-top: 10px;
 }
+#hire {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 25px;
+    font-weight: bold;
+    color: white;
+    border: 2px solid yellow;
+    border-radius: 5px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: glowBounce 2s infinite ease-in-out;
+}
+
+#hire:hover {
+    background-color: black;
+    color: black;
+    transform: scale(1.2);
+    box-shadow: 0 0 20px yellow;
+    animation: none;
+}
+
+@keyframes glowBounce {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 5px yellow;
+        border-color: yellow;
+    }
+    50% {
+        transform: scale(1.15);
+        box-shadow: 0 0 25px yellow, 0 0 10px white;
+        border-color: white;
+    }
+}
+
 .contact-btn {
     padding: 10px 22px;
     font-size: 16px;
@@ -206,7 +253,6 @@ body {
     }
 }
 
-/* Container */
 .container_2 {
     padding: 100px 70px;
     display: flex;
@@ -216,7 +262,6 @@ body {
     border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
-/* HEADER */
 .products {
     max-width: 600px;
 }
@@ -236,7 +281,6 @@ body {
     margin-top: 10px;
 }
 
-/* WORK */
 .work {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -244,7 +288,6 @@ body {
     align-items: center;
 }
 
-/* IMAGE */
 .pro_1 img {
     width: 100%;
     border-radius: 20px;
@@ -256,7 +299,6 @@ body {
     transform: scale(1.03);
 }
 
-/* LEFT CONTENT */
 .left {
     display: flex;
     flex-direction: column;
@@ -266,8 +308,18 @@ body {
 .upper h2 {
     font-size: 1.6rem;
     line-height: 30px;
+    transition: 3s;
 }
 
+.upper h2:hover{
+     background: linear-gradient(135deg, #a0b15e, #fff, #b9c294);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: scale(1);
+    letter-spacing: 1.4px;
+    text-shadow: 0 0 12px rgba(160, 177, 94, 0.7);
+}
 .upper p {
     font-size: 1.09rem;
     opacity: 0.85;
@@ -279,7 +331,6 @@ body {
     padding-bottom: 5px;
 }
 
-/* INFO */
 .lower {
     display: flex;
     flex-direction: column;
@@ -294,14 +345,12 @@ body {
     padding-bottom: 6px;
 }
 
-/* BUTTONS */
 .actions {
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
-/* GitHub Button */
 .github-btn {
     display: inline-flex;
     align-items: center;
@@ -325,7 +374,6 @@ body {
     transform: translateX(5px);
 }
 
-/* LIVE PREVIEW BUTTON 🔥 */
 .live-btn {
     padding: 12px 28px;
     border-radius: 6px;
@@ -381,7 +429,7 @@ body {
 }
 
 .me p{
-    font-size: 1.2rem;
+    font-size: 1rem;
     line-height: 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     transition: text-shadow 0.3s ease;
@@ -401,7 +449,7 @@ body {
 }
 
 .me1 p{
-    font-size: 1.2rem;
+    font-size: 1rem;
     line-height: 20px;
     position: relative;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -411,15 +459,15 @@ body {
 
 .btns {
     display: flex;
-    gap: 12px;             /* add space between buttons */
+    gap: 12px;
     justify-content: flex-start;
-    flex-wrap: wrap;        /* optional, wraps if small screen */
+    flex-wrap: wrap;
 }
 
 .btns button {
     display: flex;
     align-items: center;
-    gap: 6px;              /* space between icon and text */
+    gap: 6px;
     padding: 8px 14px;
     border: 1px solid rgba(160,177,94,0.3);
     border-radius: 6px;
@@ -521,7 +569,7 @@ body {
 }
 
 .connect a:hover {
-    color: #c3d573; /* Hover Effect 1: Anchor Color Brighten */
+    color: #c3d573;
     text-decoration: underline;
 }
 
@@ -550,6 +598,9 @@ body {
     background-color: rgba(160, 177, 94, 0.15);
     border-radius: 50%;
 }
+#boot{
+    filter: brightness(2);
+}
 
 
 .form {
@@ -569,7 +620,7 @@ body {
 .contact-form input,
 .contact-form textarea {
     padding: 15px;
-    border: 1px solid transparent; /* Added base border for effect */
+    border: 1px solid transparent;
     border-radius: 8px;
     font-size: 1rem;
     outline: none;
@@ -580,7 +631,7 @@ body {
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-    border-color: #a0b15e; /* Hover Effect 3: Green border on input focus */
+    border-color: #a0b15e;
     background: #111;
 }
 
