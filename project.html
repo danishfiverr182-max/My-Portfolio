@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 40px 20px;
+        background:
+            radial-gradient(1200px 600px at 20% 0%, rgba(0, 180, 255, 0.22), transparent 55%),
+            radial-gradient(1000px 600px at 80% 15%, rgba(160, 177, 94, 0.20), transparent 55%),
+            radial-gradient(900px 700px at 50% 100%, rgba(0, 180, 255, 0.22), transparent 60%),
+            linear-gradient(180deg, #0b0b0b, #111 40%, #0b0b0b);
+        }
+
+        /* Home Icon */
+        .home-icon {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            font-size: 1.8rem;
+            text-decoration: none;
+            color: white;
+            transition: 0.3s;
+        }
+        .home-icon img{
+            top: 20px;
+            left: 20px;
+            font-size: 1.8rem;
+            text-decoration: none;
+            color: white;
+            transition: 0.3s;
+            width: 35px;
+            height: 35px;
+            filter: invert(5);
+        }
+
+        .home-icon:hover {
+            transform: scale(1.2);
+        }
+
+        .page-title {
+            text-align: center;
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 3rem;
+            margin-bottom: 50px;
+        }
+
+        .projects-section {
+            margin-bottom: 70px;
+        }
+
+        .projects-section h2 {
+            font-size: 2rem;
+            margin-bottom: 25px;
+            font-family: "Bebas Neue", sans-serif;
+        }
+
+        /* Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        /* Card */
+        .project-card {
+            background: #1e293b;
+            border-radius: 14px;
+            padding: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .project-card h3 {
+            margin: 14px 0 6px;
+        }
+
+        .project-card p {
+            font-size: 0.9rem;
+            color: #cbd5f5;
+            line-height: 1.4;
+        }
+
+        .role {
+            display: block;
+            margin: 10px 0;
+            font-size: 0.85rem;
+            color: #a0b15e;
+        }
+
+        .live-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 16px;
+            background: #a0b15e;
+            color: #000;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .live-btn:hover {
+            background: #d3e97a;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Home -->
+    <a href="index.html" class="home-icon"><img src="./Images/home.png" alt=""></a>
+
+    <h1 class="page-title">My Projects</h1>
+
+    <!-- HTML & CSS Projects -->
+    <section class="projects-section">
+        <h2>HTML & CSS Projects</h2>
+
+        <div class="projects-grid">
+            <div class="project-card">
+                <img src="https://via.placeholder.com/400x250" alt="Project">
+                <h3>Portfolio Website</h3>
+                <p>Clean and responsive portfolio website using HTML and CSS only.</p>
+                <span class="role">Role: Frontend Developer</span>
+                <a href="project1.html" class="live-btn">Live Preview</a>
+            </div>
+
+            <div class="project-card">
+                <img src="https://via.placeholder.com/400x250" alt="Project">
+                <h3>Landing Page</h3>
+                <p>Modern landing page layout focusing on UI and responsiveness.</p>
+                <span class="role">Role: UI Developer</span>
+                <a href="project2.html" class="live-btn">Live Preview</a>
+            </div>
+
+            <div class="project-card">
+                <img src="https://via.placeholder.com/400x250" alt="Project">
+                <h3>Restaurant Website</h3>
+                <p>Responsive restaurant website with menu and contact sections.</p>
+                <span class="role">Role: Web Designer</span>
+                <a href="project3.html" class="live-btn">Live Preview</a>
+            </div>
+            <div class="project-card">
+                <img src="https://via.placeholder.com/400x250" alt="Project">
+                <h3>Restaurant Website</h3>
+                <p>Responsive restaurant website with menu and contact sections.</p>
+                <span class="role">Role: Web Designer</span>
+                <a href="project3.html" class="live-btn">Live Preview</a>
+            </div>
+            <div class="project-card">
+                <img src="https://via.placeholder.com/400x250" alt="Project">
+                <h3>Restaurant Website</h3>
+                <p>Responsive restaurant website with menu and contact sections.</p>
+                <span class="role">Role: Web Designer</span>
+                <a href="project3.html" class="live-btn">Live Preview</a>
+            </div>
+            <div class="project-card">
+                <img src="https://via.placeholder.com/400x250" alt="Project">
+                <h3>Restaurant Website</h3>
+                <p>Responsive restaurant website with menu and contact sections.</p>
+                <span class="role">Role: Web Designer</span>
+                <a href="project3.html" class="live-btn">Live Preview</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript Projects -->
+    <section class="projects-section">
+        <h2>JavaScript Projects</h2>
+
+        <div class="projects-grid">
+            <div class="project-card">
+                <img src="./Images/todo.png" alt="Project">
+                <h3>Todo List</h3>
+                <p>Functional todo app with add, delete and local storage support.</p>
+                <span class="role">Role: JavaScript Developer</span>
+                <a href="https://stately-queijadas-20b908.netlify.app/" class="live-btn">Live Preview</a>
+            </div>
+
+            <div class="project-card">
+                <img src="./Images/weather-app.png" alt="Project">
+                <h3>Weather App</h3>
+                <p>Weather application fetching real-time data using API.</p>
+                <span class="role">Role: Frontend Developer</span>
+                <a href="https://radiant-paletas-d589a1.netlify.app/" class="live-btn">Live Preview</a>
+            </div>
+
+            <div class="project-card">
+                <img src="./Images/clock.png" alt="Project">
+                <h3>Theme Clock</h3>
+                <p>Fully functional theme clock using JavaScript and LocalStorage.</p>
+                <span class="role">Role: JS Developer</span>
+                <a href="https://silly-torte-761a7f.netlify.app/" class="live-btn">Live Preview</a>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
