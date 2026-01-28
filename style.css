@@ -756,11 +756,21 @@
             flex-direction: column; 
             gap: 15px;
         }
+        #hire{
+            display: none;
+        }
+        
+        .logo{
+            position: relative;
+            right: 32%;
+        }
 
         .menu {
             flex-wrap: wrap; 
             justify-content: center;
-            gap: 15px;
+            gap: 10px;
+            position: relative;
+            right: 15%;
         }
         .body {
             flex-direction: column-reverse;
