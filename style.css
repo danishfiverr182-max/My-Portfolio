@@ -41,6 +41,13 @@
         -webkit-text-fill-color: transparent;
         text-shadow: 0 0 12px rgba(160, 177, 94, 0.7);
     }
+
+
+
+    
+
+
+
     .logo h3{
         font-family: "Bebas Neue", sans-serif;
         font-size: 1.5rem;
@@ -309,6 +316,10 @@
 
     clip-path: inset(0 100% 0 0);
     animation: drawBorder 3.5s ease-in-out infinite;
+}
+.arr{
+    text-decoration: dotted;
+    font-size: larger;
 }
 
 /* border draw */
@@ -725,6 +736,8 @@
 
         body {
             overflow-x: hidden;
+            position: relative;
+            /* right: 8%; */
         }
         .container_1, 
         .container_2, 
