@@ -783,7 +783,7 @@
             justify-content: center;
             gap: 10px;
             position: relative;
-            right: 15%;
+            right: 10%;
         }
         .body {
             flex-direction: column-reverse;
